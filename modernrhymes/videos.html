@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Modern Rhymes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+<link href='http://fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/vid.css" rel="stylesheet" type="text/css">
+	
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="text/tavascript" src="js/bootstrap.min.js"></script>
+<script src="text/tavascript" src="js/bootstrap.js"></script>
+	
+<link href="//vjs.zencdn.net/4.6/video-js.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/4.6/video.js"></script>
+
+</head> 
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo3.png" alt="Modern Rhymes">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="videos.html">Sessions</a>
+                    </li>
+                    <li>
+                        <a href="cupboard.html">Hubbard's Cupboard</a>
+                    </li>
+                    <li>
+                        <a href="ask.html">Ask Georgie</a>
+                    </li>
+					
+					 <li>
+                        <a href="characters.html">Success Stories</a>
+                    </li>
+					
+					 <li>
+                        <a href="production.html">Behind the Scenes</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+
+	<div id="videoBanner" class="container">
+		<h1>Our Sessions</h1><h5><br>Watch one of our sessions here</h5>
+	</div>
+ <div class="scroller_anchor"></div>	
+<div class="scroller" class="container" id="sticky">
+
+	<h3>Click the tag to watch a video</h3>
+	<div id ="tags">
+		<ul><li><a href="#humphrey">Humphrey</a></li>
+		<li><a href="#felix">Felix</a></li>
+			<li><a href="#goldie">Georgie</a></li></ul>
+</div>
+	
+	</div>
+	
+<section id="humphrey" class ="container">
+	
+	<h2>Another Brick in the Wall</h2>
+	
+	<div id="video-container">
+	
+	<video id="h_vid" class= "video-js vjs-default-skin" width="60%" height="auto" controls>
+		<source src="video/humphrey.mp4">
+		<source src="video/humphrey.webm">
+		<h2>Your browser does not support the video tag. Please update your browser.</h2>
+		</video>
+	</div>
+	
+	<p>Humprey Dum's nightmares have been haunting him, can the group help him out?</p>
+</section>
+	
+<section id="felix" class="container">
+	
+	<h2>These Boots Are Made for Walkin'</h2>
+	
+	<div id="video-container">
+	
+<video id="f_vid" class= "video-js vjs-default-skin"  width="60%" height="auto" controls>
+		<source src="video/felix.mp4">
+		<source src="video/felix.webm">
+		<h2>Your browser does not support the video tag. Please update your browser.</h2>
+		</video>
+	</div>
+	
+	<p> Where does Felix's attitude come from?</p>
+</section>
+	
+<section id="goldie" class="container">
+	
+	<h2>I Want to Break Free</h2>
+	
+	<div id="video-container">
+	
+		<video id="g_vid" class= "video-js vjs-default-skin" width="60%" height="auto" controls>
+			<source src ="video/georgie.webm">
+			<source src="video/georgie.mp4">
+		<h2>Your browser does not support the video tag. Please update your browser.</h2>
+		</video>
+	</div>
+	
+	<p>Georgie reveals her own demons.</p>
+</section>
+	
+	<script>// This function will be executed when the user scrolls the page.
+$(window).scroll(function(e) {
+    // Get the position of the location where the scroller starts.
+    var scroller_anchor = $(".scroller_anchor").offset().top;
+    
+    // Check if the user has scrolled and the current position is after the scroller's start location and if its not already fixed at the top 
+    if ($(this).scrollTop() >= scroller_anchor && $('.scroller').css('position') != 'fixed') 
+    {    // Change the CSS of the scroller to hilight it and fix it at the top of the screen.
+        $('.scroller').css({
+            'position': 'fixed',
+            'top': '0px'
+        });
+        // Changing the height of the scroller anchor to that of scroller so that there is no change in the overall height of the page.
+        $('.scroller_anchor').css('height', '50px');
+    } 
+    else if ($(this).scrollTop() < scroller_anchor && $('.scroller').css('position') != 'relative') 
+    {    // If the user has scrolled back to the location above the scroller anchor place it back into the content.
+        
+        // Change the height of the scroller anchor to 0 and now we will be adding the scroller back to the content.
+        $('.scroller_anchor').css('height', '0px');
+        
+        // Change the CSS and put it back to its original position.
+        $('.scroller').css({
+
+            'position': 'relative'
+        });
+    }
+});</script>
+	
+<div class ="share">
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5387745473a9bd0d"></script>
+<script type="text/javascript">
+  addthis.layers({
+    'theme' : 'transparent',
+    'share' : {
+      'position' : 'right',
+      'numPreferredServices' : 5
+    }, 
+    'follow' : {
+      'services' : [
+        {'service': 'facebook', 'id': 'modrhymes'},
+        {'service': 'twitter', 'id': 'modrhymes'},
+        {'service': 'youtube', 'id': 'UCEzjcZvjNNMzyfdVDwJI8uA'}
+      ]
+    }   
+  });
+</script>
+<!-- AddThis Smart Layers END -->
+
+	
+</body>
+</html>

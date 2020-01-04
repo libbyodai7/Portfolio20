@@ -1,0 +1,16 @@
+body{
+	background: #b5c6c6;
+}
+#prodBanner{
+	padding: 0.7em;
+   margin: 3em auto;
+	width: 80%;
+   background: #76979c;
+   color: #fff;
+   line-height: 1.3em;
+   border: 4px dashed #fff;
+   border-radius: 10px;
+   box-shadow: 0 0 0 4px #76979c, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   font-weight: normal;
+	text-shadow: 3px 3px #545b57;
+}

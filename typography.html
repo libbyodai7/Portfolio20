@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+
+<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Playfair+Display|Damion|Abril+Fatface|Nanum+Myeongjo|EB+Garamond" rel="stylesheet">
+
+
+
+  <script type="application/javascript">
+
+
+    function draw() {
+
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        var raf;
+
+        var background = new Image();
+        var flower = new Image();
+
+        var step = 50, steps = 255, delay = 20;
+        var rgbstep = 50;
+
+        var paintBlobs = [];
+        particleNum = 10;
+        offsetX = 5;
+        offsetY = 1;
+        radius = 20;
+        hue =  rand(50, 0, 1);
+        this.r = Math.abs(this.r - .05);
+
+        //Random Helper Function
+        function rand(max, min, _int) {
+  var max = (max === 0 || max)?max:1, 
+      min = min || 0, 
+      gen = min + (max - min) * Math.random();
+
+  return (_int) ? Math.round(gen) : gen;
+};
+
+
+   var blob = {
+
+              blobX: -100,
+              blobY: -50,
+
+              draw:function(){
+              offsetX = rand(200, 70, 1);
+              offsetY = rand(200, 70, 1);
+              radius = rand(40, 2, 1);
+              hue =  rand(240, 200, 1);
+              opacity = Math.random() * 0.5 + .05;
+
+              ctx.beginPath();
+              ctx.arc(this.blobX + offsetX, this.blobY + offsetY, radius, 0, 2 * Math.PI, false);
+              ctx.fillStyle = "hsla(" + hue + ",50%,80%,1)";
+              ctx.globalAlpha = opacity;
+              ctx.fill();
+             // console.log(radius)
+            }
+
+           
+            };
+
+        background.addEventListener('load', function(){
+
+          flower.addEventListener('load', function(){
+
+
+          
+           ctx.drawImage(background, 0, 0);
+
+           ctx.globalAlpha = 0.7;
+            ctx.drawImage(flower, 200, 50, 800, 600);
+
+             ctx.globalAlpha = 1.0;
+            ctx.fillStyle = '#3E3E3E';
+
+
+           ctx.font="italic 30px Playfair";
+           ctx.fillText("Narcissus serotinus", 70, 350);
+
+            ctx.font="20px EB Garamond";
+            ctx.fillText("Autumn flowering bulb with one or two narrow", 200, 500);
+
+             ctx.font="20px EB Garamond";
+            ctx.fillText("thread-like, blue-green leaves appearing in the following spring.", 200, 530);
+
+
+            ctx.font="20px EB Garamond";
+            ctx.fillText("Fragrant flowers are solitary at one or two at the stem tip.", 200, 560);
+
+         
+
+
+          
+          
+          textFadeIn();
+
+           // rbgstep++;
+
+    
+       // ctx.fillStyle = 'rgb(200, 0, 0)';
+        //ctx.fillRect(10, 10, 50, 50);
+
+       // ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+       // ctx.fillRect(30, 30, 50, 50);
+
+
+       }, false);
+        }, false);
+
+        background.src = 'images/background.jpg';
+        flower.src = 'images/flower.png';
+
+       
+
+
+         function textFadeIn() {
+
+           dashLength = 220;
+
+          dashOffset = dashLength;
+
+            speed = 20;
+
+            txt = "Autumn Narcissus";
+
+            x = 50, i = 0;
+
+
+            //ctx.clearRect(0, 0, can.width, can.height);
+            ctx.font="50px Damion";
+            ctx.lineWidth = 0.5;
+            ctx.lineJoin = "round";
+             
+          
+
+
+            (function loop() {
+ 
+
+ //DRAW THE TITLE
+
+  if (dashOffset > 0 && i <= txt.length) {
+
+   ctx.strokeStyle = ctx.fillStyle = '#757575';
+   ctx.globalAlpha = 5/6;
+  ctx.setLineDash([dashLength - dashOffset, dashOffset - speed]); // create a long dash mask
+  dashOffset -= speed;                                         // reduce dash length
+ ctx.strokeText(txt[i], x, 300);                               // stroke letter
+
+
+  requestAnimationFrame(loop);  }           // animate
+  else{
+
+
+   ctx.strokeStyle = ctx.fillStyle = '#757575';
+   ctx.globalAlpha = 5/6;
+  ctx.setLineDash([dashLength - dashOffset, dashOffset - speed]); // create a long dash mask
+  dashOffset -= speed;                                         // reduce dash length
+ ctx.strokeText(txt[i], x, 300);                               // stroke letter
+
+    ctx.fillText(txt[i], x, 300);                               // fill final letter
+    dashOffset = dashLength;                                      // prep next char
+    x += ctx.measureText(txt[i++]).width + ctx.lineWidth * Math.random();
+    
+      ctx.setTransform(1, 0, 0, 1, 0, 3 * Math.random());        // random y-delta
+      ctx.rotate(Math.random() * 0.005);                         // random rotation
+      if (i < txt.length)  
+        requestAnimationFrame(loop);
+
+         for (var j = 0; j < particleNum; j++) {
+             
+
+            //blob.blobY += 5;
+
+             //blob.draw();
+
+             blob.blobX += 5;
+
+            paintBlobs.push(this.blob);
+
+             blob.draw();
+             //raf = window.requestAnimationFrame(draw);
+
+            }
+    }
+
+    //if (i == txt.length) {
+     // for (k=0; k < paintBlobs.length; k++){
+        //paintBlobs[k].dtip
+        //console.log('dripping');
+     // }
+    //}
+
+
+
+})();
+
+
+
+
+
+};
+
+       
+      }
+    }
+  </script>
+ </head>
+ <style>
+body {
+  background-color: #FFF5E9;
+}
+
+
+ #canvas-container {
+  text-align: center;
+
+ }
+
+ canvas {
+  display: inline;
+ }
+
+ </style>
+ <body onload="draw();">
+  <div id="canvas-container">
+   <canvas id="canvas" width="800" height="600"></canvas>
+ </div>
+ </body>
+</html>

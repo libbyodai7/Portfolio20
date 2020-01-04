@@ -1,0 +1,75 @@
+body{
+	background: #fff9c6;
+}
+h2{
+	font-size: 400%;
+}
+
+#cup-h{
+ 	padding: 0.7em;
+   margin: 3em auto;
+	width: 80%;
+   background: #ffca96;
+   color: #fff;
+   line-height: 1.3em;
+   border: 4px dashed #c62813;
+   border-radius: 10px;
+   box-shadow: 0 0 0 4px #ffca96, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   font-weight: normal;
+	text-shadow: 3px 3px #545b57;
+}
+
+#cupboard{
+	padding: 5% 10%;
+	margin: 2% auto;
+	background: #91d1d5;
+	border-radius: 10px;
+	color: #fff;
+	width: 70%;
+}
+
+#hubbard-photo{
+	margin: 2% auto;
+	width: 70%;
+}
+
+#radio{
+	padding: 5% 10%;
+	margin: 2% auto;
+	background: #ffca96;
+	border-radius: 10px;
+	color: #fff;
+	width: 70%;
+	font-family: 'Pacifico', cursive;
+	text-shadow: 3px 3px #545b57;
+	font-size: 300%;
+}
+
+audio{
+	width: 70%;
+}
+
+#hubs-twit{
+	padding: 2% 5%;
+	margin: 2% auto;
+	background: #91d1d5;
+	border-radius: 10px;
+	color: #fff;
+	width: 70%;
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+	h1{
+		font-size: 200%;
+	}
+	
+	#hubs-twit{
+		padding: 0;
+		font-size: 60%
+	}
+	
+	.twitter-timeline{
+		margin: 2% 1%;
+	}
+
+}

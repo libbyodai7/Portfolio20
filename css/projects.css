@@ -1,0 +1,37 @@
+img{
+	float:left;
+    display:inline;
+    height: 100%;
+	width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+	
+}
+
+
+
+.container{
+	width: 80%;
+	padding: 5%;
+}
+.col-sm-6{
+	padding: 1%;
+}
+
+.blockquote.twitter-video {
+	margin-right: auto; 
+	margin-left: auto;
+}
+
+
+
+a h2{
+	margin: 30px;
+	margin-left: 20%;
+	padding: 10px;
+	text-align: center;
+	vertical-align: center;
+	width: 70%;
+	color: #fafafa;
+	 background-color: rgba(0,0, 0,0.7);
+}
