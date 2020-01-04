@@ -5,7 +5,7 @@ img{
 	width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-	
+
 }
 
 
@@ -17,9 +17,13 @@ img{
 .col-sm-6{
 	padding: 1%;
 }
+.col-lg-4{
+	padding: 1%;
+}
+
 
 .blockquote.twitter-video {
-	margin-right: auto; 
+	margin-right: auto;
 	margin-left: auto;
 }
 

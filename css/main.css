@@ -2,10 +2,8 @@
 
 body{
 	background: url("images/ripples.png") center center;
-	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+	background-repeat: repeat;
+
 }
 #bg{
     background:url('../img/con_bg4.png') no-repeat center center;
@@ -21,13 +19,13 @@ h1{
 
 h2{
 	font-family: 'Courgette', cursive;
-	font-size: 200%;
+	font-size: 300%;
 	margin: 1%;
 
 }
 
 h3{
-	font-family: 'Droid Serif', cursive;
+	font-family: 'Courgette', cursive;
 	font-size: 200%;
 }
 
@@ -36,7 +34,7 @@ a:hover h3{
 }
 
 h4{
-	font-family: 'Yeseva One', cursive;
+	font-family: 'Courgette', cursive;
 	font-size: 150%;
 	margin: 1%;
 	padding: 5%;
@@ -205,4 +203,11 @@ a.effect-underline:hover:after {
 	background: cover;
 	margin: 10px;
 
+}
+
+#header {
+    height: 40px;
+    border-bottom: 1px solid #EEE;
+    background-color: #000000;
+    height: 40px;
 }
